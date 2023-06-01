@@ -1,15 +1,22 @@
 import React from 'react'
 import PokemonCard from './PokemonCard'
 
-const PokemonList = ({pokemons}) => {
-    console.log(pokemons)
+const PokemonList = ({ pokemons }) => {
   return (
     <div className='PokemonList'>
-      {pokemons.map((pokemon, index)=>{
-        return <PokemonCard key={pokemon.name} name={pokemon.name}/>
-      })}
+      {pokemons.map((pokemon) => (
+        <PokemonCard
+          key={pokemon.id}
+          name={pokemon.name}
+          image={pokemon.sprites.front_default}
+          habilities={pokemon.abilities}
+          types={pokemon.types}
+          id={pokemon.id}
+          favorite={pokemon.favorite} // Agrega la propiedad 'favorite' al componente PokemonCard
+        />
+      ))}
     </div>
   )
 }
 
-export default PokemonList
+export default PokemonList;
