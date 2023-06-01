@@ -1,12 +1,11 @@
 import { Col, Spin } from 'antd';
 import Searcher from './components/Searcher';
 import './App.css';
-import { connect, useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import PokemonList from './components/PokemonList';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { getPokemon } from './api/index'
-import { getPokemonsWithDetails, setLoading, setPokemons } from './actions';
-import { getPokemonDetails } from './api/index';
+import { getPokemonsWithDetails, setLoading } from './actions/index';
 
 function App() {
 
