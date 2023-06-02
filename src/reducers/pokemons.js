@@ -1,9 +1,11 @@
-import { SET_FAVORITE, SET_LOADING, SET_POKEMONS, SET_SEARCH } from "../actions/types"
+import { SET_FAVORITE, SET_LOADING, SET_POKEMONS, SET_SEARCH, SET_MODAL_VISIBLE } from "../actions/types"
 
 const initialState = {
     pokemons: [],
     loading: false,
-    searchText: ''
+    searchText: '',
+    favoritePokemons: [],
+    modalVisible: false,
 }
 
 export const pokemonsReducer = (state = initialState, action) => {
@@ -27,13 +29,22 @@ export const pokemonsReducer = (state = initialState, action) => {
             }
 
             newPokemonList[currentPokemonIndex].favorite = !newPokemonList[currentPokemonIndex].favorite
+
+            const favoritePokemons = newPokemonList.filter(
+                (pokemon) => pokemon.favorite
+              );
             
-            return {...state, pokemons: newPokemonList}
+            return {...state, pokemons: newPokemonList, favoritePokemons: favoritePokemons}
         case SET_SEARCH:
             return {
                 ...state,
                 searchText: action.payload,
             }
+        case SET_MODAL_VISIBLE:
+            return {
+                ...state,
+                modalVisible: action.payload,
+            };
         case SET_LOADING:
             return {
                 ...state, 
