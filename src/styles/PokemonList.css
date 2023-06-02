@@ -5,3 +5,10 @@
     margin: 3rem;
     padding: 0 3rem;
 }
+
+@media (max-width: 425px) {
+    /* For screens with a minimum width of 1024px (desktop and larger) */
+    .PokemonList {
+      grid-template-columns: repeat(1, 1fr); /* Display four columns */
+    }
+  }

@@ -16,7 +16,7 @@ const PokemonList = ({ pokemons, search }) => {
             habilities={pokemon.abilities}
             types={pokemon.types}
             id={pokemon.id}
-            favorite={pokemon.favorite} // Agrega la propiedad 'favorite' al componente PokemonCard
+            favorite={pokemon.favorite}
           />
         ))}
       </div>
@@ -32,7 +32,7 @@ const PokemonList = ({ pokemons, search }) => {
           habilities={pokemon.abilities}
           types={pokemon.types}
           id={pokemon.id}
-          favorite={pokemon.favorite} // Agrega la propiedad 'favorite' al componente PokemonCard
+          favorite={pokemon.favorite}
         />
       ))}
     </div>

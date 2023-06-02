@@ -62,11 +62,11 @@ function App() {
           )
         })}
       </Modal>
-      <Col span={4} offset={10}>
-        <img src='https://raw.githubusercontent.com/musartedev/curso-redux/27298f5dd3e37caf2a90a7a82580cd2905fcab31/src/statics/logo.svg' alt='Pokedux' />
+      <Col className='img-container' span={4} offset={10}>
+        <img className='logo' src='https://raw.githubusercontent.com/musartedev/curso-redux/27298f5dd3e37caf2a90a7a82580cd2905fcab31/src/statics/logo.svg' alt='Pokedux' />
       </Col>
       <Col span={4} offset={11}>
-        <Button onClick={openModal}>
+        <Button className="open-modal-button" onClick={openModal}>
           ABRIR MODAL
         </Button>
       </Col>

@@ -4,3 +4,19 @@
   /* text-align: center; */
   margin-top: 3rem;
 }
+
+@media (max-width: 425px) {
+  .open-modal-button {
+    right: 10vw;
+    margin-top: 1rem; /* Add some top margin for spacing */
+  }
+
+  .logo {
+    width: 170%;
+    height: auto;
+  }
+
+  .img-container {
+    left: -5vw;
+  }
+}
