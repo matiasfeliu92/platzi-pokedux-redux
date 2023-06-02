@@ -16,7 +16,4 @@ export const getPokemonDetails = async(pokemon) => {
   } catch (error) {
     throw error;
   }
-  // return axios.get(pokemon.url)
-  // .then(res => res.data)
-  // .catch((err) => console.log(err))
 }

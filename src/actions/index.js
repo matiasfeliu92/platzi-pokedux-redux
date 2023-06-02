@@ -1,4 +1,3 @@
-// actions/index.js
 import { SET_FAVORITE, SET_FAVORITES_POKEMONS, SET_LOADING, SET_MODAL_VISIBLE, SET_POKEMONS, SET_SEARCH } from "./types";
 import { getPokemonDetails } from "../api";
 
