@@ -2,13 +2,17 @@ import { SET_FAVORITE, SET_LOADING, SET_POKEMONS, SET_SEARCH } from "../actions/
 
 const initialState = {
     pokemons: [],
-    loading: false
+    loading: false,
+    searchText: ''
 }
 
 export const pokemonsReducer = (state = initialState, action) => {
     switch(action.type) {
         case SET_POKEMONS: 
-            return {...state, pokemons: action.payload}
+            return {
+                ...state, 
+                pokemons: action.payload,
+            }
         case SET_FAVORITE:
             const newPokemonList = [...state.pokemons]
 
@@ -26,16 +30,15 @@ export const pokemonsReducer = (state = initialState, action) => {
             
             return {...state, pokemons: newPokemonList}
         case SET_SEARCH:
-            const search = action.payload.toLowerCase();
-            const filteredPokemons = state.pokemons.filter((pokemon) =>
-                pokemon.types[0].type.name.toLowerCase().includes(search)
-            );
             return {
                 ...state,
-                filteredPokemons
-            };
+                searchText: action.payload,
+            }
         case SET_LOADING:
-            return {...state, loading: action.payload}
+            return {
+                ...state, 
+                loading: action.payload,
+            }
         default:
             return state
     }
