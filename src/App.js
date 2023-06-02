@@ -3,7 +3,7 @@ import Searcher from './components/Searcher';
 import './App.css';
 import { useDispatch, useSelector } from 'react-redux';
 import PokemonList from './components/PokemonList';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { getPokemon } from './api/index'
 import { getPokemonsWithDetails, setLoading } from './actions/index';
 
@@ -11,6 +11,7 @@ function App() {
 
   const pokemons = useSelector(state => state.pokemons)
   const loading = useSelector((state) => state.loading)
+  const [search, setSearch] = useState('')
   const dispacth = useDispatch()
 
   useEffect(() => {
@@ -34,14 +35,14 @@ function App() {
         <img src='https://raw.githubusercontent.com/musartedev/curso-redux/27298f5dd3e37caf2a90a7a82580cd2905fcab31/src/statics/logo.svg' alt='Pokedux' />
       </Col>
       <Col span={8} offset={8}>
-        <Searcher />
+        <Searcher search={search} setSearch={setSearch} />
       </Col>
       {loading ? (
         <Col offset={12}>
           <Spin spinning size='large'/>
         </Col>
       ) : (
-        <PokemonList pokemons={pokemons} />
+        <PokemonList pokemons={pokemons} search={search} />
       )}
     </div>
   );

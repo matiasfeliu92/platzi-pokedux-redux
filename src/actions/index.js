@@ -1,5 +1,5 @@
 // actions/index.js
-import { SET_FAVORITE, SET_LOADING, SET_POKEMONS } from "./types";
+import { SET_FAVORITE, SET_LOADING, SET_POKEMONS, SET_SEARCH } from "./types";
 import { getPokemonDetails } from "../api";
 
 export const setPokemons = (payload) => ({
@@ -15,6 +15,11 @@ export const setLoading = (payload) => ({
 export const setFavorite = (payload) => ({
   type: SET_FAVORITE,
   payload,
+});
+
+export const setSearchbar = (search) => ({
+  type: SET_SEARCH,
+  payload: search,
 });
 
 export const getPokemonsWithDetails = (pokemons = []) => async (dispatch) => {
